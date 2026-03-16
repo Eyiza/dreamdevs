@@ -4,10 +4,10 @@ public class Arithmetic {
     public static void main(String[] args) {
         Scanner inputCollector = new Scanner(System.in);
 
-        System.out.println("Enter the first Integer");
+        System.out.println("Enter the first Integer: ");
         int firstNumber = inputCollector.nextInt();
 
-        System.out.println("Enter the second Integer");
+        System.out.println("Enter the second Integer: ");
         int secondNumber = inputCollector.nextInt();
 
         int firstNumberSquared = firstNumber * firstNumber;

@@ -4,7 +4,7 @@ public class Comparison {
     public static void main(String[] args) {
         Scanner inputCollector = new Scanner(System.in);
 
-        System.out.println("Enter an integer input");
+        System.out.println("Enter an integer input: ");
         int num = inputCollector.nextInt();
         int numSquare = num * num;
 
