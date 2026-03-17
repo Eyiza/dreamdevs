@@ -3,13 +3,13 @@ import java.util.Scanner;
 public class BMI {
     public static void main(String[] args) {
         System.out.println("This is a BMI Calculator");
-        Scanner scanner = new Scanner(System.in);
+        Scanner inputCollector = new Scanner(System.in);
 
         System.out.println("Enter weight in pounds: ");
-        int weight = scanner.nextInt();
+        int weight = inputCollector.nextInt();
 
         System.out.println("Enter height in inches: ");
-        int height = scanner.nextInt();
+        int height = inputCollector.nextInt();
 
         int bmi = (weight * 703) / (height * height);
 

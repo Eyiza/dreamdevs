@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class Seperation {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner inputCollector = new Scanner(System.in);
 
         System.out.println("Enter a 5 digit number: ");
-        int number = scanner.nextInt();
+        int number = inputCollector.nextInt();
 
         int digit1 = number / 10000;
         int digit2 = (number / 1000) % 10;

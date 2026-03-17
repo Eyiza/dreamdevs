@@ -2,16 +2,16 @@ import java.util.Scanner;
 
 public class Pyramid {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner inputCollector = new Scanner(System.in);
 
         System.out.print("Enter estimated number of stones: ");
-        int stones = scanner.nextInt();
+        int stones = inputCollector.nextInt();
 
         System.out.print("Enter average weight of each stone (in pounds): ");
-        int stoneWeight = scanner.nextInt();
+        int stoneWeight = inputCollector.nextInt();
 
         System.out.print("Enter number of years it takes to build: ");
-        int years = scanner.nextInt();
+        int years = inputCollector.nextInt();
 
         int totalWeight  = stones * stoneWeight;
         int hoursInAYear = 365 * 24;
