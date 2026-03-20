@@ -48,4 +48,14 @@ public class KataTest {
         assertEquals(7, Kata.positiveDifference(9,2));
     }
 
+    @Test
+    public void quotient_Between96And2Test() {
+        assertEquals(48, Kata.divide(96,2));
+    }
+
+    @Test
+    public void quotient_DivideByZeroTest() {
+        assertEquals(0, Kata.divide(96,0));
+    }
+
 }

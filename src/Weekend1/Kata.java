@@ -18,4 +18,9 @@ public class Kata {
         if (number1 < number2) return number2 - number1;
         else return number1 - number2;
     }
+
+    public static int divide(int number1, int number2) {
+        if (number2 == 0) return 0;
+        else return (number1 / number2);
+    }
 }
