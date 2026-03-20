@@ -13,4 +13,9 @@ public class Kata {
         }
         return true;
     }
+
+    public static int positiveDifference(int number1, int number2) {
+        if (number1 < number2) return number2 - number1;
+        else return number1 - number2;
+    }
 }

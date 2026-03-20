@@ -33,4 +33,19 @@ public class KataTest {
         assertFalse(Kata.isPrime(30));
     }
 
+    @Test
+    public void absoluteDifference_EqualNumbersTest() {
+        assertEquals(0, Kata.positiveDifference(4,4));
+    }
+
+    @Test
+    public void absoluteDifference_Between3And7Test() {
+        assertEquals(4, Kata.positiveDifference(3,7));
+    }
+
+    @Test
+    public void absoluteDifference_Between9And2Test() {
+        assertEquals(7, Kata.positiveDifference(9,2));
+    }
+
 }
