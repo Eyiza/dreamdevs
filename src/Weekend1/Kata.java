@@ -23,4 +23,13 @@ public class Kata {
         if (number2 == 0) return 0;
         else return (number1 / number2);
     }
+
+    public static int factorOf(int number) {
+        if (number == 1) return 1;
+        int factors = 0;
+        for (int i = 1; i <= number; i++) {
+            if (number % i == 0) factors++;
+        }
+        return factors;
+    }
 }

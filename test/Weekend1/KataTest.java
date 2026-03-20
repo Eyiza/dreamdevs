@@ -58,4 +58,24 @@ public class KataTest {
         assertEquals(0, Kata.divide(96,0));
     }
 
+    @Test
+    public void quotient_DivideByZero_NegativeTest() {
+        assertEquals(4, Kata.divide(-8,-2));
+    }
+
+    @Test
+    public void numberOfFactors_1Test() {
+        assertEquals(1, Kata.factorOf(1));
+    }
+
+    @Test
+    public void numberOfFactors_10Test() {
+        assertEquals(4, Kata.factorOf(10));
+    }
+
+    @Test
+    public void numberOfFactors_30Test() {
+        assertEquals(8, Kata.factorOf(30));
+    }
+
 }
