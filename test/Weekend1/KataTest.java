@@ -35,17 +35,17 @@ public class KataTest {
 
     @Test
     public void absoluteDifference_EqualNumbersTest() {
-        assertEquals(0, Kata.positiveDifference(4,4));
+        assertEquals(0, Kata.subtract(4,4));
     }
 
     @Test
     public void absoluteDifference_Between3And7Test() {
-        assertEquals(4, Kata.positiveDifference(3,7));
+        assertEquals(4, Kata.subtract(3,7));
     }
 
     @Test
     public void absoluteDifference_Between9And2Test() {
-        assertEquals(7, Kata.positiveDifference(9,2));
+        assertEquals(7, Kata.subtract(9,2));
     }
 
     @Test
