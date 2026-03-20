@@ -54,6 +54,11 @@ public class KataTest {
     }
 
     @Test
+    public void quotient_Between96And5Test() {
+        assertEquals(19.200000762939453, Kata.divide(96,5));
+    }
+
+    @Test
     public void quotient_DivideByZeroTest() {
         assertEquals(0, Kata.divide(96,0));
     }
@@ -101,6 +106,16 @@ public class KataTest {
     @Test
     public void isNotPalindrome_52145Test() {
         assertFalse(Kata.isPalindrome(52145));
+    }
+
+    @Test
+    public void factorialOfFiveTest() {
+        assertEquals(120, Kata.factorialOf(5));
+    }
+
+    @Test
+    public void factorialOfZeroTest() {
+        assertEquals(1, Kata.factorialOf(0));
     }
 
 }

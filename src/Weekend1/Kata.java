@@ -19,9 +19,9 @@ public class Kata {
         else return number1 - number2;
     }
 
-    public static int divide(int number1, int number2) {
+    public static float divide(int number1, int number2) {
         if (number2 == 0) return 0;
-        else return (number1 / number2);
+        else return ((float) number1 / number2);
     }
 
     public static int factorOf(int number) {
@@ -53,5 +53,13 @@ public class Kata {
 
         if (originalNumber == reversedNumber) return true;
         else return false;
+    }
+
+    public static long factorialOf(int number) {
+        long factorial = 1;
+        for (int i = 1; i <= number; i++) {
+            factorial *= i;
+        }
+        return factorial;
     }
 }
