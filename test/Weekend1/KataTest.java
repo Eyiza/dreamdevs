@@ -118,4 +118,14 @@ public class KataTest {
         assertEquals(1, Kata.factorialOf(0));
     }
 
+    @Test
+    public void squareOfFiveIs25Test() {
+        assertEquals(25, Kata.squareOf(5));
+    }
+
+    @Test
+    public void squareOfThirtyIs900Test() {
+        assertEquals(900, Kata.squareOf(30));
+    }
+
 }
