@@ -78,4 +78,19 @@ public class KataTest {
         assertEquals(8, Kata.factorOf(30));
     }
 
+    @Test
+    public void isSquare_25Test() {
+        assertTrue(Kata.isSquare(25));
+    }
+
+    @Test
+    public void isSquare_4Test() {
+        assertTrue(Kata.isSquare(4));
+    }
+
+    @Test
+    public void isNotSquare_20Test() {
+        assertFalse(Kata.isSquare(20));
+    }
+
 }

@@ -32,4 +32,12 @@ public class Kata {
         }
         return factors;
     }
+
+    public static boolean isSquare(int number) {
+        if (number == 1) return true;
+        for (int i = 1; i <= number / 2; i++) {
+            if (i * i == number) return true;
+        }
+        return false;
+    }
 }
