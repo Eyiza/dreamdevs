@@ -40,4 +40,18 @@ public class Kata {
         }
         return false;
     }
+
+    public static boolean isPalindrome(int number) {
+        int reversedNumber = 0;
+        int originalNumber = number;
+
+        while (number != 0) {
+            int digit = number % 10;
+            reversedNumber = reversedNumber * 10 + digit;
+            number = number / 10;
+        }
+
+        if (originalNumber == reversedNumber) return true;
+        else return false;
+    }
 }
