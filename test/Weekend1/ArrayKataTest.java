@@ -112,4 +112,18 @@ public class ArrayKataTest {
         boolean isEqual = Arrays.equals(evenNumbers, evenNumbersIn(numbers2));
         assertTrue(isEqual);
     }
+
+    @Test
+    public void oddNumbers_InArray1Test() {
+        int[] oddNumbers = {1, 3, 5, 7, 9};
+        boolean isEqual = Arrays.equals(oddNumbers, oddNumbersIn(numbers1));
+        assertTrue(isEqual);
+    }
+
+    @Test
+    public void oddNumbers_InArray2Test() {
+        int[] oddNumbers = {5};
+        boolean isEqual = Arrays.equals(oddNumbers, oddNumbersIn(numbers2));
+        assertTrue(isEqual);
+    }
 }

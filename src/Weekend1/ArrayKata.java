@@ -78,4 +78,15 @@ public class ArrayKata {
         }
         return evenNumbers;
     }
+
+    public static int[] oddNumbersIn(int[] numbers) {
+        int length = noOfOddNumbersIn(numbers);
+        int[] oddNumbers = new int[length];
+        int index = 0;
+
+        for (int number : numbers) {
+            if (number % 2 != 0) oddNumbers[index++] = number;
+        }
+        return oddNumbers;
+    }
 }
