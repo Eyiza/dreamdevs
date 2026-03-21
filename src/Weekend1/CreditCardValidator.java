@@ -3,9 +3,6 @@ package Weekend1;
 import java.util.Scanner;
 
 public class CreditCardValidator {
-    static String cardType;
-    static boolean validity;
-
     public static void main(String[] args){
         Scanner inputCollector = new Scanner(System.in);
 
@@ -16,7 +13,7 @@ public class CreditCardValidator {
 
         String cardType = getCardType(cardNumber);
 
-        validity = checkLuhnValidity(cardNumber);
+        boolean validity = checkLuhnValidity(cardNumber);
 
         String prompt = """
                ****************************************
