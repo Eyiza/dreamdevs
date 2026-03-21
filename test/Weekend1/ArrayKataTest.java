@@ -1,5 +1,6 @@
 package Weekend1;
 import org.junit.jupiter.api.Test;
+import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;
 import static Weekend1.ArrayKata.*;
 
@@ -55,5 +56,26 @@ public class ArrayKataTest {
     @Test
     public void sumOfOddNumbers_Array2_Is5Test() {
         assertEquals(5, sumOfOddNumbersIn(numbers2));
+    }
+
+    @Test
+    public void minAndMax_Array1_Test() {
+        int[] minMax = {1, 9};
+        boolean isEqual = Arrays.equals(minMax, maximumAndMinimumOf(numbers1));
+        assertTrue(isEqual);
+    }
+
+    @Test
+    public void minAndMax_Array1_FalseTest() {
+        int[] minMax = {1, 5};
+        boolean isEqual = Arrays.equals(minMax, maximumAndMinimumOf(numbers1));
+        assertFalse(isEqual);
+    }
+
+    @Test
+    public void minAndMax_Array2_Test() {
+        int[] minMax = {5, 20};
+        boolean isEqual = Arrays.equals(minMax, maximumAndMinimumOf(numbers2));
+        assertTrue(isEqual);
     }
 }
