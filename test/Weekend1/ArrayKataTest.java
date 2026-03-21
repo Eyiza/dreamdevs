@@ -98,4 +98,18 @@ public class ArrayKataTest {
     public void noOfEvenNumbers_Array2_Is2Test() {
         assertEquals(2, noOfEvenNumbersIn(numbers2));
     }
+
+    @Test
+    public void evenNumbers_InArray1Test() {
+        int[] evenNumbers = {2, 4, 6, 8};
+        boolean isEqual = Arrays.equals(evenNumbers, evenNumbersIn(numbers1));
+        assertTrue(isEqual);
+    }
+
+    @Test
+    public void evenNumbers_InArray2Test() {
+        int[] evenNumbers = {20, 10};
+        boolean isEqual = Arrays.equals(evenNumbers, evenNumbersIn(numbers2));
+        assertTrue(isEqual);
+    }
 }

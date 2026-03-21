@@ -1,5 +1,7 @@
 package Weekend1;
 
+import java.util.Arrays;
+
 public class ArrayKata {
     public static int maximumIn(int[] numbers) {
         int maximum = numbers[0];
@@ -66,4 +68,14 @@ public class ArrayKata {
         return count;
     }
 
+    public static int[] evenNumbersIn(int[] numbers) {
+        int length = noOfEvenNumbersIn(numbers);
+        int[] evenNumbers = new int[length];
+        int index = 0;
+
+        for (int number : numbers) {
+            if (number % 2 == 0) evenNumbers[index++] = number;
+        }
+        return evenNumbers;
+    }
 }
