@@ -46,4 +46,14 @@ public class ArrayKataTest {
     public void sumOfEvenNumbers_Array2_Is1Test() {
         assertEquals(30, sumOfEvenNumbersIn(numbers2));
     }
+
+    @Test
+    public void sumOfOddNumbers_Array1_Is25Test() {
+        assertEquals(25, sumOfOddNumbersIn(numbers1));
+    }
+
+    @Test
+    public void sumOfOddNumbers_Array2_Is5Test() {
+        assertEquals(5, sumOfOddNumbersIn(numbers2));
+    }
 }
