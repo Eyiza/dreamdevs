@@ -16,4 +16,10 @@ public class ArrayKata {
         }
         return minimum;
     }
+
+    public static int sumOf(int[] numbers) {
+        int sum = 0;
+        for (int number : numbers) sum += number;
+        return sum;
+    }
 }

@@ -26,4 +26,14 @@ public class ArrayKataTest {
     public void minimumInNumbers2Array_Is5Test() {
         assertEquals(5, minimumIn(numbers2));
     }
+
+    @Test
+    public void sumOfNumbers1Array_Is1Test() {
+        assertEquals(45, sumOf(numbers1));
+    }
+
+    @Test
+    public void sumOfNumbers2Array_Is35Test() {
+        assertEquals(35, sumOf(numbers2));
+    }
 }
