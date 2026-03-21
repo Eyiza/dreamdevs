@@ -126,4 +126,18 @@ public class ArrayKataTest {
         boolean isEqual = Arrays.equals(oddNumbers, oddNumbersIn(numbers2));
         assertTrue(isEqual);
     }
+
+    @Test
+    public void squaredNumbers_InArray1Test() {
+        int[] squaredNumbers = {1, 4, 9, 16, 25, 36, 49, 64, 81};
+        boolean isEqual = Arrays.equals(squaredNumbers, squareNumbersIn(numbers1));
+        assertTrue(isEqual);
+    }
+
+    @Test
+    public void squaredNumbers_InArray2Test() {
+        int[] squaredNumbers = {400, 25, 100};
+        boolean isEqual = Arrays.equals(squaredNumbers, squareNumbersIn(numbers2));
+        assertTrue(isEqual);
+    }
 }

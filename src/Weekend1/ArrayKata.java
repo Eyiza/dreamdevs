@@ -1,7 +1,5 @@
 package Weekend1;
 
-import java.util.Arrays;
-
 public class ArrayKata {
     public static int maximumIn(int[] numbers) {
         int maximum = numbers[0];
@@ -88,5 +86,14 @@ public class ArrayKata {
             if (number % 2 != 0) oddNumbers[index++] = number;
         }
         return oddNumbers;
+    }
+
+    public static int[] squareNumbersIn(int[] numbers) {
+        int length = numbers.length;
+        int[] squaredNumbers = new int[length];
+
+        for (int i = 0; i < numbers.length; i++) squaredNumbers[i] = numbers[i] * numbers[i];
+
+        return squaredNumbers;
     }
 }
