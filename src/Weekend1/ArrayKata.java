@@ -22,4 +22,12 @@ public class ArrayKata {
         for (int number : numbers) sum += number;
         return sum;
     }
+
+    public static int sumOfEvenNumbersIn(int[] numbers) {
+        int sum = 0;
+        for (int number : numbers) {
+            if (number % 2 == 0) sum += number;
+        }
+        return sum;
+    }
 }

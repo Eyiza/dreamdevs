@@ -28,12 +28,22 @@ public class ArrayKataTest {
     }
 
     @Test
-    public void sumOfNumbers1Array_Is1Test() {
+    public void sumOfNumbers1Array_Is45Test() {
         assertEquals(45, sumOf(numbers1));
     }
 
     @Test
     public void sumOfNumbers2Array_Is35Test() {
         assertEquals(35, sumOf(numbers2));
+    }
+
+    @Test
+    public void sumOfEvenNumbers_Array1_Is20Test() {
+        assertEquals(20, sumOfEvenNumbersIn(numbers1));
+    }
+
+    @Test
+    public void sumOfEvenNumbers_Array2_Is1Test() {
+        assertEquals(30, sumOfEvenNumbersIn(numbers2));
     }
 }
