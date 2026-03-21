@@ -78,4 +78,14 @@ public class ArrayKataTest {
         boolean isEqual = Arrays.equals(minMax, maximumAndMinimumOf(numbers2));
         assertTrue(isEqual);
     }
+
+    @Test
+    public void noOfOddNumbers_Array1_Is5Test() {
+        assertEquals(5, noOfOddNumbersIn(numbers1));
+    }
+
+    @Test
+    public void noOfOddNumbers_Array2_Is1Test() {
+        assertEquals(1, noOfOddNumbersIn(numbers2));
+    }
 }
