@@ -88,4 +88,14 @@ public class ArrayKataTest {
     public void noOfOddNumbers_Array2_Is1Test() {
         assertEquals(1, noOfOddNumbersIn(numbers2));
     }
+
+    @Test
+    public void noOfEvenNumbers_Array1_Is4Test() {
+        assertEquals(4, noOfEvenNumbersIn(numbers1));
+    }
+
+    @Test
+    public void noOfEvenNumbers_Array2_Is2Test() {
+        assertEquals(2, noOfEvenNumbersIn(numbers2));
+    }
 }
