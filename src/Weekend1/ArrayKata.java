@@ -8,4 +8,12 @@ public class ArrayKata {
         }
         return maximum;
     }
+
+    public static int minimumIn(int[] numbers) {
+        int minimum = numbers[0];
+        for (int number : numbers) {
+            if (number < minimum) minimum = number;
+        }
+        return minimum;
+    }
 }

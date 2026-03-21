@@ -4,17 +4,26 @@ import static org.junit.jupiter.api.Assertions.*;
 import static Weekend1.ArrayKata.*;
 
 public class ArrayKataTest {
-    int[] numbers;
+    private int[] numbers1 = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    private int[] numbers2 = {20, 5, 10};
 
     @Test
-    public void largestNumberInArray_Is9Test() {
-        numbers = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9};
-        assertEquals(9, maximumIn(numbers));
+    public void largestNumberInNumbers1Array_Is9Test() {
+        assertEquals(9, maximumIn(numbers1));
     }
 
     @Test
-    public void largestNumberInArray_Is20Test() {
-        numbers = new int[] {20, 5, 10};
-        assertEquals(20, maximumIn(numbers));
+    public void largestNumberInNumbers2Array_Is20Test() {
+        assertEquals(20, maximumIn(numbers2));
+    }
+
+    @Test
+    public void minimumInNumbers1Array_Is1Test() {
+        assertEquals(1, minimumIn(numbers1));
+    }
+
+    @Test
+    public void minimumInNumbers2Array_Is5Test() {
+        assertEquals(5, minimumIn(numbers2));
     }
 }
