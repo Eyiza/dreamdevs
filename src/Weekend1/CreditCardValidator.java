@@ -15,7 +15,7 @@ public class CreditCardValidator {
 
         boolean validity = checkLuhnValidity(cardNumber);
 
-        String prompt = """
+        String cardDetails = """
                ****************************************
                     Credit Card Details
                **Credit Card Type: %s
@@ -24,7 +24,7 @@ public class CreditCardValidator {
                **Credit Card Validity Status: %s
                ****************************************
                """;
-        System.out.printf(prompt, cardType, cardNumber, cardNumber.length(), validity ? "Valid" : "Invalid");
+        System.out.printf(cardDetails, cardType, cardNumber, cardNumber.length(), validity ? "Valid" : "Invalid");
     }
 
     public static boolean isValidLength(String cardNumber){
