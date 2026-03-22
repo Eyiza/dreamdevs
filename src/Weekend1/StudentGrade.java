@@ -57,6 +57,10 @@ public class StudentGrade {
             positions[i] = position;
         }
 
+        printSummary();
+    }
+
+    static void printSummary(){
         printStudentSummary();
         printSubjectSummary();
         printClassSummary();
@@ -91,13 +95,13 @@ public class StudentGrade {
         int easiestSubject = 0;
         int maxPasses = -1;
 
-        int highestScoringStudent = 0;
-        int highestScoringSubject = 0;
-        int highestScore = 0;
+        int overallHighestScoringStudent = 0;
+        int highestScoredSubject = 0;
+        int overallHighestScore = 0;
 
-        int lowestScoringStudent = 0;
-        int lowestScoringSubject = 0;
-        int lowestScore = 100;
+        int overallLowestScoringStudent = 0;
+        int lowestScoredSubject = 0;
+        int overallLowestScore = 100;
 
         System.out.println(""" 
                                        SUBJECT SUMMARY
@@ -118,21 +122,21 @@ public class StudentGrade {
             int totalScore = 0;
             int fails = 0;
             int passes = 0;
-            int highest = scores[0][j];
-            int lowest = scores[0][j];
-            int highestStudent = 1;
-            int lowestStudent = 1;
+            int highestScore = scores[0][j];
+            int lowestScore = scores[0][j];
+            int highestScoringStudent = 1;
+            int lowestScoringStudent = 1;
 
             for (int i = 0; i < students; i++) {
                 int score = scores[i][j];
 
-                if (score > highest) {
-                    highest = score;
-                    highestStudent = i + 1;
+                if (score > highestScore) {
+                    highestScore = score;
+                    highestScoringStudent = i + 1;
                 }
-                if (score < lowest) {
-                    lowest = score;
-                    lowestStudent = i + 1;
+                if (score < lowestScore) {
+                    lowestScore = score;
+                    lowestScoringStudent = i + 1;
                 }
 
                 totalScore += score;
@@ -144,7 +148,7 @@ public class StudentGrade {
             double average = (double) totalScore / students;
 
             System.out.printf(individualSubjectSummary, j + 1,
-                    highestStudent, highest, lowestStudent, lowest,
+                    highestScoringStudent, highestScore, lowestScoringStudent, lowestScore,
                     totalScore, average, passes, fails);
 
             if (passes > maxPasses) {
@@ -157,16 +161,16 @@ public class StudentGrade {
                 hardestSubject = j + 1;
             }
 
-            if (highest > highestScore) {
-                highestScore = highest;
-                highestScoringStudent = highestStudent;
-                highestScoringSubject = j + 1;
+            if (highestScore > overallHighestScore) {
+                overallHighestScore = highestScore;
+                overallHighestScoringStudent = highestScoringStudent;
+                highestScoredSubject = j + 1;
             }
 
-            if (lowest < lowestScore) {
-                lowestScore = lowest;
-                lowestScoringStudent = lowestStudent;
-                lowestScoringSubject = j + 1;
+            if (lowestScore < overallLowestScore) {
+                overallLowestScore = lowestScore;
+                overallLowestScoringStudent = lowestScoringStudent;
+                lowestScoredSubject = j + 1;
             }
         }
 
@@ -181,14 +185,14 @@ public class StudentGrade {
                 """;
         System.out.printf(subjectSummary,
                 hardestSubject, maxFailures, easiestSubject, maxPasses,
-                highestScoringStudent, highestScoringSubject, highestScore,
-                lowestScoringStudent, lowestScoringSubject, lowestScore);
+                overallHighestScoringStudent, highestScoredSubject, overallHighestScore,
+                overallLowestScoringStudent, lowestScoredSubject, overallLowestScore);
 
     }
 
     static void printClassSummary(){
         int bestGraduatingStudent = 1;
-        int bestGraduatingScore = 0;
+        int bestGraduatingScore = totalScores[0];
 
         int worstGraduatingStudent = 1;
         int worstGraduatingScore = totalScores[0];
