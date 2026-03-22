@@ -39,14 +39,14 @@ public class StudentGrade {
                     if (score >= 0 && score <= 100) break;
                     else System.out.println("Invalid score! Must be between 0 and 100.");
 
-                    System.out.println("Saving >>>>>>>>>>>>>>>>>>>>>>>>");
-                    scores[i][j] = score;
-                    total += score;
-                    System.out.println("Saved successfully");
                 }
+                System.out.println("Saving >>>>>>>>>>>>>>>>>>>>>>>>");
+                scores[i][j] = score;
+                total += score;
+                System.out.println("Saved successfully");
             }
             totalScores[i] = total;
-            averages[i] = (double) total / students;
+            averages[i] = (double) total / subjects;
         }
 
         for (int i = 0; i < students; i++) {
@@ -59,30 +59,7 @@ public class StudentGrade {
 
         printStudentSummary();
         printSubjectSummary();
-
-
-        String classSummary = """
-                               SUBJECT SUMMARY
-        The hardest subject is Subject %d with %d failures
-        The easiest subject is Subject %d with %d passes
-        The overall Highest score is scored by Student %d in subject %d scoring %d
-        The overall Lowest score is scored by Student %d in subject %d scoring %d
-        ==========================================================
-                                CLASS SUMMARY
-        ==========================================================
-        Best Graduating Student is: Student %d scoring %f
-        ==========================================================
-        
-        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        Worst Graduating Student is: Student %d scoring %f
-        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        
-        ==========================================================
-        Class total score is: %d
-        Class Average Score is: %f
-        ==========================================================
-        """;
-
+        printClassSummary();
     }
 
     static void printStudentSummary() {
@@ -92,6 +69,7 @@ public class StudentGrade {
             System.out.printf("SUB%d      ", (j + 1));
         }
         System.out.println("TOT     AVE     POS");
+        System.out.println("==========================================================");
 
         for (int i = 0; i < students; i++) {
             System.out.printf("Student %d      ",(i + 1));
@@ -100,6 +78,10 @@ public class StudentGrade {
             }
             System.out.printf("%d      %.2f      %d\n", totalScores[i], averages[i], positions[i]);
         }
+        System.out.println(""" 
+                ==========================================================
+                ==========================================================
+                """);
     }
 
     static void printSubjectSummary() {
@@ -117,13 +99,16 @@ public class StudentGrade {
         int lowestScoringSubject = 0;
         int lowestScore = 100;
 
-        String individualSubjectSummary = """
+        System.out.println(""" 
                                        SUBJECT SUMMARY
+                """);
+
+        String individualSubjectSummary = """
                 Subject %d
-                Highest scoring student is: Student %d scoring %f
-                Lowest scoring student is: Student %d scoring %f
+                Highest scoring student is: Student %d scoring %d
+                Lowest scoring student is: Student %d scoring %d
                 Total Score is: %d
-                Average Score is: %f
+                Average Score is: %.2f
                 Number of passes: %d
                 Number of fails: %d
                 
@@ -135,19 +120,19 @@ public class StudentGrade {
             int passes = 0;
             int highest = scores[0][j];
             int lowest = scores[0][j];
-            int highestStudent = 0;
-            int lowestStudent = 0;
+            int highestStudent = 1;
+            int lowestStudent = 1;
 
             for (int i = 0; i < students; i++) {
                 int score = scores[i][j];
 
                 if (score > highest) {
                     highest = score;
-                    highestStudent = i;
+                    highestStudent = i + 1;
                 }
                 if (score < lowest) {
                     lowest = score;
-                    lowestStudent = i;
+                    lowestStudent = i + 1;
                 }
 
                 totalScore += score;
@@ -158,34 +143,35 @@ public class StudentGrade {
 
             double average = (double) totalScore / students;
 
-            System.out.printf(individualSubjectSummary, j,
+            System.out.printf(individualSubjectSummary, j + 1,
                     highestStudent, highest, lowestStudent, lowest,
                     totalScore, average, passes, fails);
 
             if (passes > maxPasses) {
                 maxPasses = passes;
-                easiestSubject = j;
+                easiestSubject = j + 1;
             }
 
             if (fails > maxFailures) {
-                maxFailures = passes;
-                hardestSubject = j;
+                maxFailures = fails;
+                hardestSubject = j + 1;
             }
 
             if (highest > highestScore) {
                 highestScore = highest;
                 highestScoringStudent = highestStudent;
-                highestScoringSubject = j;
+                highestScoringSubject = j + 1;
             }
 
             if (lowest < lowestScore) {
                 lowestScore = lowest;
                 lowestScoringStudent = lowestStudent;
-                lowestScoringSubject = j;
+                lowestScoringSubject = j + 1;
             }
         }
 
         String subjectSummary = """
+                ==========================================================
                 The hardest subject is Subject %d with %d failures
                 The easiest subject is Subject %d with %d passes
                 The overall Highest score is scored by Student %d in subject %d scoring %d
@@ -198,5 +184,49 @@ public class StudentGrade {
                 highestScoringStudent, highestScoringSubject, highestScore,
                 lowestScoringStudent, lowestScoringSubject, lowestScore);
 
+    }
+
+    static void printClassSummary(){
+        int bestGraduatingStudent = 1;
+        int bestGraduatingScore = 0;
+
+        int worstGraduatingStudent = 1;
+        int worstGraduatingScore = totalScores[0];
+
+        int classTotal = 0;
+
+        for (int i = 0; i < students; i++) {
+            int totalScore = totalScores[i];
+            if (totalScore > bestGraduatingScore) {
+                bestGraduatingScore = totalScore;
+                bestGraduatingStudent = i + 1;
+            }
+            if (totalScore < worstGraduatingScore) {
+                worstGraduatingScore = totalScore;
+                worstGraduatingStudent = i + 1;
+            }
+            classTotal += totalScore;
+        }
+
+        double classAverage = (double) classTotal / students;
+
+        String classSummary = """
+                                CLASS SUMMARY
+        ==========================================================
+        Best Graduating Student is: Student %d scoring %d
+        ==========================================================
+        
+        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        Worst Graduating Student is: Student %d scoring %d
+        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        
+        ==========================================================
+        Class total score is: %d
+        Class Average Score is: %.2f
+        ==========================================================
+        """;
+        System.out.printf(classSummary,
+                bestGraduatingStudent, bestGraduatingScore, worstGraduatingStudent, worstGraduatingScore,
+                classTotal, classAverage);
     }
 }
