@@ -47,12 +47,12 @@ public class CreditCardValidator {
         int sum1 = 0;
         int sum2 = 0;
         int oddCount = 1;
-        boolean shouldDouble = false;
+        boolean digitShouldBeDoubled = false;
 
         for (int i = cardNumber.length() - 1; i >= 0; i--){
             int digit = cardNumber.charAt(i) - '0';
 
-            if (shouldDouble) {
+            if (digitShouldBeDoubled) {
                 int square;
                 if (digit > 4) square = ((digit * 2) / 10) + ((digit * 2) % 10);
                 else square = digit * 2;
@@ -61,7 +61,7 @@ public class CreditCardValidator {
             if (oddCount % 2 != 0) sum2 += digit;
 
             oddCount++;
-            shouldDouble = !shouldDouble;
+            digitShouldBeDoubled = !digitShouldBeDoubled;
         }
 
         return (sum1 + sum2) % 10 == 0;
