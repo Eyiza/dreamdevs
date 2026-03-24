@@ -15,10 +15,6 @@ public class Person {
         problems.add(problem);
     }
 
-    public ArrayList<Problem> getProblems() {
-        return problems;
-    }
-
     public void solveProblem(String name) {
         for (Problem problem : problems) {
             if (problem.getName().equalsIgnoreCase(name)) {
@@ -31,17 +27,8 @@ public class Person {
         return problems.size();
     }
 
-    public void viewUnsolvedProblems(){
-        System.out.println("Unsolved Problems:");
-        for (Problem problem : problems) {
-            if (!problem.isSolved()) System.out.printf("%s (%s) %n", problem.getName(), problem.getType());
-        }
+    public ArrayList<Problem> getProblems() {
+        return problems;
     }
 
-    public void viewAllProblems(){
-        System.out.println("All problems:");
-        for (Problem problem : problems) {
-            System.out.printf("%s (%s) - %s %n", problem.getName(), problem.getType(), (problem.isSolved() ? "Solved" : "Unsolved"));
-        }
-    }
 }

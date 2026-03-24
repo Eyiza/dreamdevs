@@ -21,17 +21,6 @@ public class PersonProblemTest {
     }
 
     @Test
-    public void getProblemsTest() {
-        Problem.ProblemType type = Problem.ProblemType.FINANCIAL;
-        person.addProblem("My account balance is low", type);
-
-        Problem.ProblemType type2 = Problem.ProblemType.SPIRITUAL;
-        person.addProblem("My village people are after me", type2);
-        ArrayList<Problem> problems = person.getProblems();
-
-    }
-
-    @Test
     public void solveProblemTest() {
         Problem.ProblemType type = Problem.ProblemType.FINANCIAL;
         person.addProblem("My account balance is low", type);
@@ -60,8 +49,10 @@ public class PersonProblemTest {
         Problem.ProblemType type2 = Problem.ProblemType.SPIRITUAL;
         person.addProblem("My village people are after me", type2);
 
-        person.viewUnsolvedProblems();
-        person.countUnsolvedProblems();
+        System.out.println("Unsolved Problems:");
+        for (Problem problem : person.getProblems()) {
+            if (!problem.isSolved()) System.out.printf("%s (%s) %n", problem.getName(), problem.getType());
+        }
     }
 
     @Test
@@ -76,6 +67,11 @@ public class PersonProblemTest {
         person.addProblem("My grades in school are not too well", type);
 
         person.solveProblem("My account balance is low");
-        person.viewAllProblems();
+
+        System.out.println("All problems:");
+
+        for (Problem problem: person.getProblems()) {
+            System.out.printf("%s (%s) - %s %n", problem.getName(), problem.getType(), (problem.isSolved() ? "Solved" : "Unsolved"));
+        }
     }
 }
