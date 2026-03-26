@@ -17,7 +17,7 @@ public class AccountTest {
     @BeforeEach
     public void setUp() {
         pin = "1234";
-        account = new Account(pin);
+        account = new Account("Precious", pin);
     }
     @Test
     public void newAccount_balanceIsEmptyTest() {

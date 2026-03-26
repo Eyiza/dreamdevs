@@ -7,11 +7,15 @@ import bankApp.exceptions.InvalidPinException;
 import java.math.BigDecimal;
 
 public class Account {
+    private String name;
     private String pin;
     private BigDecimal balance = new BigDecimal(0);
+    private int accountNumber;
 
-    public Account(String pin) {
+    public Account(String name, String pin) {
         this.pin = pin;
+        this.name = name;
+        this.accountNumber = 0;
     }
 
     public BigDecimal checkBalance(String pin) {
