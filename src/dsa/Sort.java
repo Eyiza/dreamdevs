@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Sort {
     public static int[] sort(int[] array){
         for (int i = 0; i < array.length; i++){
-//            System.out.println("Iteration " + i);
+            System.out.println("Iteration " + i);
             for (int j = 0; j < (array.length - i - 1); j++) {
                 if (array[j] > array[j + 1]) {
                     array[j] = array[j] + array[j+1];
@@ -13,8 +13,7 @@ public class Sort {
                     array[j] = array[j] - array[j+1];
                 }
             }
-//            System.out.println(Arrays.toString(array));
-
+            System.out.println(Arrays.toString(array));
         }
         return array;
     }

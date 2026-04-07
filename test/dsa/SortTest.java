@@ -34,4 +34,9 @@ class SortTest {
     void zeroDivideTest(){
         assertEquals(0, divide(0, 3));
     }
+
+    @Test
+    void incompleteDivideTest(){
+        assertEquals(3, divide(10, 3));
+    }
 }
