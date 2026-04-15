@@ -7,9 +7,10 @@ public class ProductExceptSelf {
         int n = nums.length;
         int[] products = new int[n];
 
-        products[0] = 1;
-        for (int i = 1; i < n; i++) {
-            products[i] = products[i-1] * nums[i-1];
+        int products_left = 1;
+        for (int i = 0; i < n; i++) {
+            products[i] = products_left;
+            products_left *= nums[i];
         }
         // System.out.print(Arrays.toString(products));
 
