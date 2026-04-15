@@ -12,6 +12,11 @@ public class ProductExceptSelf {
             products[i] = products_left;
             products_left *= nums[i];
         }
+//        OR:
+//        products[0] = 1;
+//        for (int i = 1; i < n; i++) {
+//            products[i] = products[i-1] * nums[i-1];
+//        }
         // System.out.print(Arrays.toString(products));
 
         int product_right = 1;
